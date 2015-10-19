@@ -1,1 +1,1 @@
-Martian View: a Mars image site for users who want an easy way to search, store, and share images captured from NASA's Mars rovers. 
+Martian View: A Mars image site for users who want an easy way to search, store, and share images captured from NASA's Mars rovers. 
