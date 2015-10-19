@@ -8,4 +8,8 @@ app.use('/curiosity-rover', curiosity);
 app.use('/opportunity-rover', opportunity);
 app.use('/spirit-rover', spirit);
 
+
+app.use('/css', express.static('/css'));
+app.use('/js', express.static('/js'));
+
 app.listen(1337);
