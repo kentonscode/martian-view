@@ -18,7 +18,13 @@
   "homepage": "https://github.com/kentonscode/martian-view#readme",
   "dependencies": {
     "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.1.3",
+    "gulp-nodemon": "^2.0.4",
     "mongoose": "^4.1.12",
-    "request": "^2.65.0"
+    "request": "^2.65.0",
+    "require-dir": "^0.3.0",
+    "should": "^7.1.0",
+    "supertest": "^1.1.0"
   }
 }
