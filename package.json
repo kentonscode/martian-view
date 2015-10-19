@@ -1,0 +1,24 @@
+{
+  "name": "martian-view",
+  "version": "1.0.0",
+  "description": "Martian View: An image site for users who want an easy way to search, store, and share images captured from NASA's Mars rovers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kentonscode/martian-view.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kentonscode/martian-view/issues"
+  },
+  "homepage": "https://github.com/kentonscode/martian-view#readme",
+  "dependencies": {
+    "express": "^4.13.3",
+    "mongoose": "^4.1.12",
+    "request": "^2.65.0"
+  }
+}
