@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Mars Rovers</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/default.css">
+</head>
+<body class='mars-background' 'img-responsive'>
+  <!--navigation-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="navbar">
+        <div class="col-md-12">
+          <ul class="nav-tabs nav">
+            <li role="presentation"><a href="">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header text -->
+  <div class="jumbotron rover-selection">
+    <h2 class='search-title'>Select A Rover</h3>
+    </div>
+    <!-- Rovers -->
+    <div class='container-fluid'>
+      <div class="row">
+        <div class="col-md-4 ">
+          <div class="panel panel-default text-center">
+            <div class="panel-heading Curiosity">
+              <h3 class="panel-title"> Curiosity </h3>
+            </div>
+            <img src="./img/curiosity-rover.jpg" height="300" width="300">
+            <div class="panel-footer">
+              <!-- trigger modal -->
+              <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-curiosity">
+               Search
+             </button>
+           </div>
+         </div>
+       </div>
+       <div class="col-md-4">
+        <div class="panel panel-default text-center">
+          <div class="panel-heading Opportunity">
+            <h3 class="panel-title"> Opportunity</h3>
+          </div>
+          <img src="./img/opportunity-rover.jpg" height="300" width="300">
+          <div class="panel-footer popular">
+            <!-- trigger modal -->
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-opportunity">
+             Search
+           </button>
+         </div>
+       </div>
+     </div>
+     <div class="col-md-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading Spirit">
+          <h3 class="panel-title"> Spirit</h3>
+        </div>
+        <img src="./img/spirit-rover.jpg" height="300" width="300">
+        <div class="panel-footer">
+         <!-- trigger modal -->
+         <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-spirit">
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <script src="js/mars-rovers.js"></script>
+</body>
+</html>

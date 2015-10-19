@@ -1,0 +1,14 @@
+.mars-background {
+  background-image: url('../img/mars-background.jpg');
+   background-repeat: repeat-x;
+}
+
+.search-title {
+  text-align: center;
+  background-image: url('../img/mars-background.jpg');
+}
+
+.rover-selection {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
