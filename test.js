@@ -20,7 +20,7 @@ describe('Express Backend Route Tests', function() {
 
   it('status code 200', function(done) {
     agent
-    .get('/spirit-rover/2008-04-09')
+    .get('/spirit-rover/2009-04-09')
     .expect(200)
     .end(done);
   });
