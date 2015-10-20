@@ -22,9 +22,13 @@ function showImages() {
  var roverImages = requestDateSearch.responseText;
  console.log(roverImages);
   for (var images = 0; images < roverImages.length; images++) {
-    var separate = (roverImages[images].split(':'));
+    var separate = roverImages[images].split('/');
     console.log(separate);
     var imgTag = document.createElement('img');
+    imgTag.src = roverImages;
+    imgTag.setAttribute('width', '300px');
+    imgTag.setAttribute('height', '300px');
+    imgTag.alt = 'curiosity rover image';
     document.getElementById('images').appendChild(imgTag);
     }
   }
