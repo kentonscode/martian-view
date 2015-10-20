@@ -13,7 +13,21 @@ function submitDate(event) {
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
   requestDateSearch.send(dateSelection());
   requestDateSearch.addEventListener('load', function(){
+   showImages();
   });
+
+//creating img div
+
+function showImages() {
+ var roverImages = requestDateSearch.responseText;
+ console.log(roverImages);
+  for (var images = 0; images < roverImages.length; images++) {
+    var separate = (roverImages[images].split(':'));
+    console.log(separate);
+    var imgTag = document.createElement('img');
+    document.getElementById('images').appendChild(imgTag);
+    }
+  }
 }
 
 searchDate.addEventListener('click', submitDate, false);
