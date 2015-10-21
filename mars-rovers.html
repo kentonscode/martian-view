@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="css/default.css">
 </head>
 <body class='mars-background img-responsive'>
-  <!--navigation-->
   <div class="container-fluid">
     <div class="row">
       <div class="navbar">
@@ -20,7 +19,6 @@
       </div>
     </div>
   </div>
-  <!-- header text -->
   <div class="jumbotron rover-selection">
     <h2 class='search-title'>Select A Rover</h2>
   </div>
@@ -37,69 +35,75 @@
             <!-- trigger modal -->
             <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-curiosity">
              Search
-            </button>
-          </div>
+           </button>
+         </div>
+       </div>
+     </div>
+     <div class="col-md-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading opportunity">
+          <h3 class="panel-title"> Opportunity</h3>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-default text-center">
-          <div class="panel-heading opportunity">
-            <h3 class="panel-title"> Opportunity</h3>
-          </div>
-          <img src="./img/opportunity-rover.jpg" alt='Opportunity rover' height="300" width="300">
-          <div class="panel-footer popular">
+        <img src="./img/opportunity-rover.jpg" alt='Opportunity rover' height="300" width="300">
+        <div class="panel-footer popular">
           <!-- trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-opportunity">
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-opportunity">
            Search
-            </button>
-          </div>
+         </button>
+       </div>
+     </div>
+     </div>
+     <div class="col-md-4">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading spirit">
+          <h3 class="panel-title"> Spirit</h3>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="panel panel-default text-center">
-          <div class="panel-heading spirit">
-            <h3 class="panel-title"> Spirit</h3>
-          </div>
-          <img src="./img/spirit-rover.jpg" alt='spirit rover' height="300" width="300">
-          <div class="panel-footer">
+        <img src="./img/spirit-rover.jpg" alt='spirit rover' height="300" width="300">
+        <div class="panel-footer">
           <!-- trigger modal -->
-            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-spirit">
-             Search
-            </button>
+          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#search-spirit">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>  
+  </div>
+</div>
+<div class='container-fluid'>
+  <!-- div to show images from search-->
+  <div id='images' class="panel images-panel panel-default text-center">
+  </div>
+  <div class="col-xs-4 col-xs-offset-4">
+    <div id='noPhotos' class="panel noimages-panel panel-default text-center">
+    </div>
+  </div>
+</div>
+<!-- curiosity modal -->
+<div class="modal fade" id="search-curiosity" role="dialog">
+  <div class="modal-dialog">
+    <!--content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Enter a date to search (YYYY-MM-DD)</h4>
+      </div>
+      <div class="modal-body">
+        <!-- date input -->
+        <form role="form" name='curiosity-input'>
+          <div class="form-group">
+            <input type="text" name="curiosity-date" class="form-control" id="date" placeholder='YYYY-DD-MM'>
           </div>
-        </div>
+          <button id="curiosity-search" type="submit" data-dismiss="modal" class="btn btn-default">Submit</button>
+        </form>
       </div>
-    </div>
-      <!-- div to show images from search-->
-    <div id='images'>
-    </div>
-  </div>
-  <!-- curiosity modal -->
-  <div class="modal fade" id="search-curiosity" role="dialog">
-    <div class="modal-dialog">
-      <!--content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Enter a date to search</h4>
-        </div>
-        <div class="modal-body">
-          <!-- date input -->
-          <form role="form" name='curiosity-input'>
-            <div class="form-group">
-              <input type="text" name="curiosity-date" class="form-control" id="date" placeholder='YYYY-DD-MM'>
-            </div>
-            <button id="curiosity-search" type="submit" class="btn btn-default">Submit</button>
-          </form>
-        </div>
-        <div class="modal-footer">
-          <!-- footer-->
-        </div>
+      <div class="modal-footer">
+        <!-- footer-->
       </div>
     </div>
   </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src="js/mars-rovers.js"></script>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="js/mars-rovers.js"></script>
 </body>
 </html>
