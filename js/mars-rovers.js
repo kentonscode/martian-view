@@ -1,17 +1,19 @@
-var searchDate = document.getElementById('curiosity-search');
+//Curiosity Search
 
-function dateSelection() {
+var searchCuriosity = document.getElementById('curiosity-search');
+
+function curiosityDateSelection() {
   var datePicked = new Object();
   datePicked.curiosityDate = document.forms[0].elements.date.value;
   return JSON.stringify(datePicked);
 }
 
-function submitDate(event) {
+function submitCuriosityDate(event) {
   event.preventDefault();
   var requestDateSearch = new XMLHttpRequest();
   requestDateSearch.open('GET', '/curiosity-rover/' + document.forms[0].elements.date.value, true);
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
-  requestDateSearch.send(dateSelection());
+  requestDateSearch.send(curiosityDateSelection());
   requestDateSearch.addEventListener('load', function(){
    if (requestDateSearch.responseText == 'No Photos Found For This Day') {
     noImages();
@@ -20,17 +22,17 @@ function submitDate(event) {
  }
   });
 
-//creating images div
+//creates images div
 
 function showImages() {
  var images = JSON.parse(requestDateSearch.responseText);
- for (image in images) {
+ for (var image in images) {
   var imgTag = document.createElement('img');
     imgTag.src = images[image];
-    imgTag.setAttribute('width', '300px');
-    imgTag.setAttribute('height', '300px');
+    imgTag.setAttribute('width', '400px');
+    imgTag.setAttribute('height', '400px');
     imgTag.alt = 'curiosity rover image';
-    imgTag.className = 'img-thumbnail'
+    imgTag.className = 'img-thumbnail';
     document.getElementById('images').appendChild(imgTag);
     document.getElementById('images').style.display = 'block';
     document.getElementById('noPhotos').style.display = 'none';
@@ -38,14 +40,98 @@ function showImages() {
   }
 }
 
-//show error message
+//Opportunity Search
+
+var searchOpportunity = document.getElementById('opportunity-search');
+
+function opportunityDateSelection() {
+  var datePicked = new Object();
+  datePicked.opportunityDate = document.forms[0].elements.date.value;
+  return JSON.stringify(datePicked);
+}
+
+function submitOpportunityDate(event) {
+  event.preventDefault();
+  var requestDateSearch = new XMLHttpRequest();
+  requestDateSearch.open('GET', '/opportunity-rover/' + document.forms[1].elements.date.value, true);
+  requestDateSearch.setRequestHeader('Content-type', 'application/json');
+  requestDateSearch.send(opportunityDateSelection());
+  requestDateSearch.addEventListener('load', function(){
+   if (requestDateSearch.responseText == 'No Photos Found For This Day') {
+    noImages();
+   } else {
+   showImages();
+ }
+  });
+
+//creates images div
+
+function showImages() {
+ var images = JSON.parse(requestDateSearch.responseText);
+ for (var image in images) {
+  var imgTag = document.createElement('img');
+    imgTag.src = images[image];
+    imgTag.setAttribute('width', '400px');
+    imgTag.setAttribute('height', '400px');
+    imgTag.alt = 'curiosity rover image';
+    imgTag.className = 'img-thumbnail';
+    document.getElementById('images').appendChild(imgTag);
+    document.getElementById('images').style.display = 'block';
+    document.getElementById('noPhotos').style.display = 'none';
+    }
+  }
+}
+
+//Spirit Search
+
+var searchSpirit = document.getElementById('spirit-search');
+
+function spiritDateSelection() {
+  var datePicked = new Object();
+  datePicked.opportunityDate = document.forms[0].elements.date.value;
+  return JSON.stringify(datePicked);
+}
+
+function submitSpiritDate(event) {
+  event.preventDefault();
+  var requestDateSearch = new XMLHttpRequest();
+  requestDateSearch.open('GET', '/spirit-rover/' + document.forms[2].elements.date.value, true);
+  requestDateSearch.setRequestHeader('Content-type', 'application/json');
+  requestDateSearch.send(spiritDateSelection());
+  requestDateSearch.addEventListener('load', function(){
+   if (requestDateSearch.responseText == 'No Photos Found For This Day') {
+    noImages();
+   } else {
+   showImages();
+ }
+  });
+
+//creates images div
+
+function showImages() {
+ var images = JSON.parse(requestDateSearch.responseText);
+ for (var image in images) {
+  var imgTag = document.createElement('img');
+    imgTag.src = images[image];
+    imgTag.setAttribute('width', '400px');
+    imgTag.setAttribute('height', '400px');
+    imgTag.alt = 'curiosity rover image';
+    imgTag.className = 'img-thumbnail';
+    document.getElementById('images').appendChild(imgTag);
+    document.getElementById('images').style.display = 'block';
+    document.getElementById('noPhotos').style.display = 'none';
+    }
+  }
+}
+
+//show error message - No photos
 
 function noImages() {
-  // var noPhotos = images.textContent
-  // images.textContent = 'Sorry, No Photos Found For This Day. Please search again'
-  document.getElementById('noPhotos').textContent = 'Sorry, No Photos Found For This Day. Please search again'
+  document.getElementById('noPhotos').textContent = 'Sorry, No Photos Found For This Day. Please search again';
   document.getElementById('noPhotos').style.display = 'block';
   document.getElementById('images').style.display = 'none';
 }
 
-searchDate.addEventListener('click', submitDate, false);
+searchCuriosity.addEventListener('click', submitCuriosityDate, false);
+searchOpportunity.addEventListener('click', submitOpportunityDate, false);
+searchSpirit.addEventListener('click', submitSpiritDate, false);
