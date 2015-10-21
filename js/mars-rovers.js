@@ -27,7 +27,11 @@ function submitCuriosityDate(event) {
 function showImages() {
  var images = JSON.parse(requestDateSearch.responseText);
  for (var image in images) {
-  var imgTag = document.createElement('img');
+  var div = document.getElementById('curiosity-images');
+    while(div.firstChild){
+       div.removeChild(div.firstChild);
+      }
+    var imgTag = document.createElement('img');
     imgTag.src = images[image];
     imgTag.setAttribute('width', '400px');
     imgTag.setAttribute('height', '400px');
