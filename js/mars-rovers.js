@@ -17,31 +17,31 @@ function submitCuriosityDate(event) {
   requestDateSearch.addEventListener('load', function(){
    if (requestDateSearch.responseText == 'No Photos Found For This Day') {
     noImages();
-   } else {
+  } else {
    showImages();
- }
-  });
+  }
+});
 
 //creates images div
 
 function showImages() {
  var images = JSON.parse(requestDateSearch.responseText);
+ var imagesDiv = document.getElementById('curiosity-images');
+ while(imagesDiv.firstChild){
+   imagesDiv.removeChild(imagesDiv.firstChild);
+ }
  for (var image in images) {
-  var div = document.getElementById('curiosity-images');
-    while(div.firstChild){
-       div.removeChild(div.firstChild);
-      }
-    var imgTag = document.createElement('img');
-    imgTag.src = images[image];
-    imgTag.setAttribute('width', '400px');
-    imgTag.setAttribute('height', '400px');
-    imgTag.alt = 'curiosity rover image';
-    imgTag.className = 'img-thumbnail';
-    document.getElementById('curiosity-images').appendChild(imgTag);
-    document.getElementById('curiosity-images').style.display = 'block';
-    document.getElementById('opportunity-images').style.display = 'none';
-    document.getElementById('spirit-images').style.display = 'none';
-    document.getElementById('noPhotos').style.display = 'none';
+  var imgTag = document.createElement('img');
+  imgTag.src = images[image];
+  imgTag.setAttribute('width', '400px');
+  imgTag.setAttribute('height', '400px');
+  imgTag.alt = 'curiosity rover image';
+  imgTag.className = 'img-thumbnail';
+  document.getElementById('curiosity-images').appendChild(imgTag);
+  document.getElementById('curiosity-images').style.display = 'block';
+  document.getElementById('opportunity-images').style.display = 'none';
+  document.getElementById('spirit-images').style.display = 'none';
+  document.getElementById('noPhotos').style.display = 'none';
     }
   }
 }
@@ -65,27 +65,31 @@ function submitOpportunityDate(event) {
   requestDateSearch.addEventListener('load', function(){
    if (requestDateSearch.responseText == 'No Photos Found For This Day') {
     noImages();
-   } else {
+  } else {
    showImages();
- }
-  });
+  }
+});
 
 //creates images div
 
 function showImages() {
  var images = JSON.parse(requestDateSearch.responseText);
+ var imagesDiv = document.getElementById('opportunity-images');
+ while(imagesDiv.firstChild){
+   imagesDiv.removeChild(imagesDiv.firstChild);
+ }
  for (var image in images) {
   var imgTag = document.createElement('img');
-    imgTag.src = images[image];
-    imgTag.setAttribute('width', '400px');
-    imgTag.setAttribute('height', '400px');
-    imgTag.alt = 'curiosity rover image';
-    imgTag.className = 'img-thumbnail';
-    document.getElementById('opportunity-images').appendChild(imgTag);
-    document.getElementById('opportunity-images').style.display = 'block';
-    document.getElementById('curiosity-images').style.display = 'none';
-    document.getElementById('spirit-images').style.display = 'none';
-    document.getElementById('noPhotos').style.display = 'none';
+  imgTag.src = images[image];
+  imgTag.setAttribute('width', '400px');
+  imgTag.setAttribute('height', '400px');
+  imgTag.alt = 'curiosity rover image';
+  imgTag.className = 'img-thumbnail';
+  document.getElementById('opportunity-images').appendChild(imgTag);
+  document.getElementById('opportunity-images').style.display = 'block';
+  document.getElementById('curiosity-images').style.display = 'none';
+  document.getElementById('spirit-images').style.display = 'none';
+  document.getElementById('noPhotos').style.display = 'none';
     }
   }
 }
@@ -109,27 +113,31 @@ function submitSpiritDate(event) {
   requestDateSearch.addEventListener('load', function(){
    if (requestDateSearch.responseText == 'No Photos Found For This Day') {
     noImages();
-   } else {
+  } else {
    showImages();
- }
-  });
+  }
+});
 
 //creates images div
 
 function showImages() {
  var images = JSON.parse(requestDateSearch.responseText);
+ var imagesDiv = document.getElementById('spirit-images');
+ while(imagesDiv.firstChild){
+   imagesDiv.removeChild(imagesDiv.firstChild);
+ }
  for (var image in images) {
   var imgTag = document.createElement('img');
-    imgTag.src = images[image];
-    imgTag.setAttribute('width', '400px');
-    imgTag.setAttribute('height', '400px');
-    imgTag.alt = 'curiosity rover image';
-    imgTag.className = 'img-thumbnail';
-    document.getElementById('spirit-images').appendChild(imgTag);
-    document.getElementById('spirit-images').style.display = 'block';
-    document.getElementById('curiosity-images').style.display = 'none';
-    document.getElementById('opportunity-images').style.display = 'none';
-    document.getElementById('noPhotos').style.display = 'none';
+  imgTag.src = images[image];
+  imgTag.setAttribute('width', '400px');
+  imgTag.setAttribute('height', '400px');
+  imgTag.alt = 'curiosity rover image';
+  imgTag.className = 'img-thumbnail';
+  document.getElementById('spirit-images').appendChild(imgTag);
+  document.getElementById('spirit-images').style.display = 'block';
+  document.getElementById('curiosity-images').style.display = 'none';
+  document.getElementById('opportunity-images').style.display = 'none';
+  document.getElementById('noPhotos').style.display = 'none';
     }
   }
 }
