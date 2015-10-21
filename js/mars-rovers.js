@@ -32,6 +32,8 @@ function showImages() {
     imgTag.alt = 'curiosity rover image';
     imgTag.className = 'img-thumbnail'
     document.getElementById('images').appendChild(imgTag);
+    document.getElementById('images').style.display = 'block';
+    document.getElementById('noPhotos').style.display = 'none';
     }
   }
 }
@@ -39,9 +41,11 @@ function showImages() {
 //show error message
 
 function noImages() {
-  var noPhotos = images.textContent
-  images.textContent = 'Sorry, No Photos Found For This Day. Please search again'
-  document.getElementById('images').appendChild(noPhotos);
+  // var noPhotos = images.textContent
+  // images.textContent = 'Sorry, No Photos Found For This Day. Please search again'
+  document.getElementById('noPhotos').textContent = 'Sorry, No Photos Found For This Day. Please search again'
+  document.getElementById('noPhotos').style.display = 'block';
+  document.getElementById('images').style.display = 'none';
 }
 
 searchDate.addEventListener('click', submitDate, false);
