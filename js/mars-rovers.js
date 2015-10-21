@@ -4,14 +4,14 @@ var searchCuriosity = document.getElementById('curiosity-search');
 
 function curiosityDateSelection() {
   var datePicked = new Object();
-  datePicked.curiosityDate = document.forms[0].elements.date.value;
+  datePicked.curiosityDate = document.forms[0].elements.curiosity.value;
   return JSON.stringify(datePicked);
 }
 
 function submitCuriosityDate(event) {
   event.preventDefault();
   var requestDateSearch = new XMLHttpRequest();
-  requestDateSearch.open('GET', '/curiosity-rover/' + document.forms[0].elements.date.value, true);
+  requestDateSearch.open('GET', '/curiosity-rover/' + document.forms[0].elements.curiosity.value, true);
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
   requestDateSearch.send(curiosityDateSelection());
   requestDateSearch.addEventListener('load', function(){
@@ -33,8 +33,10 @@ function showImages() {
     imgTag.setAttribute('height', '400px');
     imgTag.alt = 'curiosity rover image';
     imgTag.className = 'img-thumbnail';
-    document.getElementById('images').appendChild(imgTag);
-    document.getElementById('images').style.display = 'block';
+    document.getElementById('curiosity-images').appendChild(imgTag);
+    document.getElementById('curiosity-images').style.display = 'block';
+    document.getElementById('opportunity-images').style.display = 'none';
+    document.getElementById('spirit-images').style.display = 'none';
     document.getElementById('noPhotos').style.display = 'none';
     }
   }
@@ -46,14 +48,14 @@ var searchOpportunity = document.getElementById('opportunity-search');
 
 function opportunityDateSelection() {
   var datePicked = new Object();
-  datePicked.opportunityDate = document.forms[0].elements.date.value;
+  datePicked.opportunityDate = document.forms[1].elements.opportunity.value;
   return JSON.stringify(datePicked);
 }
 
 function submitOpportunityDate(event) {
   event.preventDefault();
   var requestDateSearch = new XMLHttpRequest();
-  requestDateSearch.open('GET', '/opportunity-rover/' + document.forms[1].elements.date.value, true);
+  requestDateSearch.open('GET', '/opportunity-rover/' + document.forms[1].elements.opportunity.value, true);
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
   requestDateSearch.send(opportunityDateSelection());
   requestDateSearch.addEventListener('load', function(){
@@ -75,8 +77,10 @@ function showImages() {
     imgTag.setAttribute('height', '400px');
     imgTag.alt = 'curiosity rover image';
     imgTag.className = 'img-thumbnail';
-    document.getElementById('images').appendChild(imgTag);
-    document.getElementById('images').style.display = 'block';
+    document.getElementById('opportunity-images').appendChild(imgTag);
+    document.getElementById('opportunity-images').style.display = 'block';
+    document.getElementById('curiosity-images').style.display = 'none';
+    document.getElementById('spirit-images').style.display = 'none';
     document.getElementById('noPhotos').style.display = 'none';
     }
   }
@@ -88,14 +92,14 @@ var searchSpirit = document.getElementById('spirit-search');
 
 function spiritDateSelection() {
   var datePicked = new Object();
-  datePicked.opportunityDate = document.forms[0].elements.date.value;
+  datePicked.opportunityDate = document.forms[2].elements.spirit.value;
   return JSON.stringify(datePicked);
 }
 
 function submitSpiritDate(event) {
   event.preventDefault();
   var requestDateSearch = new XMLHttpRequest();
-  requestDateSearch.open('GET', '/spirit-rover/' + document.forms[2].elements.date.value, true);
+  requestDateSearch.open('GET', '/spirit-rover/' + document.forms[2].elements.spirit.value, true);
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
   requestDateSearch.send(spiritDateSelection());
   requestDateSearch.addEventListener('load', function(){
@@ -117,8 +121,10 @@ function showImages() {
     imgTag.setAttribute('height', '400px');
     imgTag.alt = 'curiosity rover image';
     imgTag.className = 'img-thumbnail';
-    document.getElementById('images').appendChild(imgTag);
-    document.getElementById('images').style.display = 'block';
+    document.getElementById('spirit-images').appendChild(imgTag);
+    document.getElementById('spirit-images').style.display = 'block';
+    document.getElementById('curiosity-images').style.display = 'none';
+    document.getElementById('opportunity-images').style.display = 'none';
     document.getElementById('noPhotos').style.display = 'none';
     }
   }
@@ -129,7 +135,9 @@ function showImages() {
 function noImages() {
   document.getElementById('noPhotos').textContent = 'Sorry, No Photos Found For This Day. Please search again';
   document.getElementById('noPhotos').style.display = 'block';
-  document.getElementById('images').style.display = 'none';
+  document.getElementById('curiosity-images').style.display = 'none';
+  document.getElementById('opportunity-images').style.display = 'none';
+  document.getElementById('spirit-images').style.display = 'none';
 }
 
 searchCuriosity.addEventListener('click', submitCuriosityDate, false);
