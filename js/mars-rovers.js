@@ -13,25 +13,35 @@ function submitDate(event) {
   requestDateSearch.setRequestHeader('Content-type', 'application/json');
   requestDateSearch.send(dateSelection());
   requestDateSearch.addEventListener('load', function(){
+   if (requestDateSearch.responseText == 'No Photos Found For This Day') {
+    noImages();
+   } else {
    showImages();
+ }
   });
 
-//creating img div
+//creating images div
 
 function showImages() {
- var roverImages = requestDateSearch.responseText;
- console.log(roverImages);
-  for (var images = 0; images < roverImages.length; images++) {
-    var separate = roverImages[images].split('/');
-    console.log(separate);
-    var imgTag = document.createElement('img');
-    imgTag.src = roverImages;
+ var images = JSON.parse(requestDateSearch.responseText);
+ for (image in images) {
+  var imgTag = document.createElement('img');
+    imgTag.src = images[image];
     imgTag.setAttribute('width', '300px');
     imgTag.setAttribute('height', '300px');
     imgTag.alt = 'curiosity rover image';
+    imgTag.className = 'img-thumbnail'
     document.getElementById('images').appendChild(imgTag);
     }
   }
+}
+
+//show error message
+
+function noImages() {
+  var noPhotos = images.textContent
+  images.textContent = 'Sorry, No Photos Found For This Day. Please search again'
+  document.getElementById('images').appendChild(noPhotos);
 }
 
 searchDate.addEventListener('click', submitDate, false);
