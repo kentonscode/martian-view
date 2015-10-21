@@ -1,6 +1,6 @@
 .mars-background {
   background-image: url('../img/mars-background.jpg');
-   background-repeat: repeat-x;
+  text-align: center;
 }
 
 .search-title {
@@ -9,6 +9,26 @@
 }
 
 .rover-selection {
-    padding-top: 0px;
-    padding-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
+
+  .images-panel {
+    margin-bottom: 20px;
+    background-image: url('../img/space-background.jpg');
+    border: 0px solid transparent;
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+
+.img-thumbnail {
+  margin: 10px;
+}
+
+.noimages-panel {
+    background-color: white;
+    font-size: 14px;
+    border: 0px solid transparent;
+    border-radius: 11px;
+  }
