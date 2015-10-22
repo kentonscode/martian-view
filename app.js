@@ -4,11 +4,14 @@ var curiosity = require('./server-routes/curiosity-route.js');
 var opportunity = require('./server-routes/opportunity-route.js');
 var spirit = require('./server-routes/spirit-route.js');
 var roversRoute = require ('./server-routes/rovers-route.js')
+var signUp = require ('./server-routes/sign-up.js')
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 
 //mongodb
 
-mongoose.connect('mongodb://localhost/martian')
+mongoose.connect('mongodb://localhost/db_martian')
 
 mongoose.model('users', {name: String});
 
@@ -19,10 +22,18 @@ app.get('/users', function(req, res) {
 });
 
 
+ // POST jsonParser to console 
+ app.post('/sign-up', jsonParser, function (request, response) {
+  console.log(JSON.stringify(request.body));
+  response.send('received!');
+});
+
+
 app.use('/curiosity-rover', curiosity);
 app.use('/opportunity-rover', opportunity);
 app.use('/spirit-rover', spirit);
 app.use('/mars-rovers', roversRoute)
+app.use('/register', signUp);
 
 
 app.use('/css', express.static('css'));
