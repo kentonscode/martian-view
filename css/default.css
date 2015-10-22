@@ -1,11 +1,66 @@
+#curiosity-images,
+#opportunity-images,
+#spirit-images {
+  background-color: black;
+}
+
+.images-panel {
+  margin-bottom: 20px;
+  background-image: url('../img/space-background.jpg');
+  border: 0px solid transparent;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.img-thumbnail {
+  margin: 10px;
+}
+
+h2 {
+  color: white;
+  font-weight: bold;
+}
+
 .mars-background {
-  background-image: url('../img/mars-background.jpg');
+  background-image: url('../img/mars.jpg');
+  background-repeat: repeat-y;
+  width: 100%;
   text-align: center;
 }
 
-.search-title {
-  text-align: center;
-  background-image: url('../img/mars-background.jpg');
+.nav-tabs {
+  border: 0px solid transparent;
+}
+
+.noimages-panel {
+  background-color: white;
+  font-size: 14px;
+  border: 0px solid transparent;
+  border-radius: 11px;
+}
+
+#noPhotos {
+  background-color: white;
+}
+
+.panel,
+.panel-footer,
+.panel-heading {
+  border: 0px solid transparent;
+  background-image: url('../img/opportunity-rover.jpg');
+  background: transparent;
+  background-size: 10px;
+}
+
+.panel-default > .panel-heading {
+  background: transparent;
+}
+
+.panel-default > .panel-heading > h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
 }
 
 .rover-selection {
@@ -13,22 +68,7 @@
   padding-bottom: 0px;
 }
 
-  .images-panel {
-    margin-bottom: 20px;
-    background-image: url('../img/space-background.jpg');
-    border: 0px solid transparent;
-    position: absolute;
-    width: 100%;
-    left: 0;
-  }
-
-.img-thumbnail {
-  margin: 10px;
+.search-title {
+  text-align: center;
+  background-color: black; 
 }
-
-.noimages-panel {
-    background-color: white;
-    font-size: 14px;
-    border: 0px solid transparent;
-    border-radius: 11px;
-  }

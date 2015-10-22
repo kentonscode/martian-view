@@ -145,7 +145,7 @@ function showImages() {
 //show error message - No photos
 
 function noImages() {
-  document.getElementById('noPhotos').textContent = 'Sorry, No Photos Found For This Day. Please search again';
+  document.getElementById('noPhotos').textContent = 'Sorry, no photos found for this day. Please search again.';
   document.getElementById('noPhotos').style.display = 'block';
   document.getElementById('curiosity-images').style.display = 'none';
   document.getElementById('opportunity-images').style.display = 'none';

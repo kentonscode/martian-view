@@ -4,8 +4,8 @@ var spirit = express.Router();
 
 spirit.get('/:date', function(req, res, next) {
   requestHttp('https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?earth_date=' + req.params.date + '&api_key=XXXXXXXXXXXXXXXXXXXXXXXXXXX',
-    function(error, response, body) {
-      if (JSON.parse(body).error == 'No Photos Found') {
+    function(errors, response, body) {
+      if (JSON.parse(body).errors == 'No Photos Found') {
         res.send('No Photos Found For This Day');
       } else {
           var photos = JSON.parse(body).photos;
