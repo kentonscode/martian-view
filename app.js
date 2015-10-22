@@ -21,23 +21,37 @@ app.get('/users', function(req, res) {
   });
 });
 
+//Schema
+var Schema = mongoose.Schema
+var userSchema = new Schema({
+  firstname:  String,
+  lastname: String,
+  password:   String
+});
+
+var newUser = mongoose.model('newUser', userSchema);
 
  // POST jsonParser to console 
  app.post('/sign-up', jsonParser, function (request, response) {
-  console.log(JSON.stringify(request.body));
-  response.send('received!');
+   var parseData = JSON.stringify(request.body);
+   var user = new newUser({parseData});
+   console.log(parseData);
+
+
+  // console.log(JSON.stringify(request.body));
+  // response.send('received!');
 });
 
 
-app.use('/curiosity-rover', curiosity);
-app.use('/opportunity-rover', opportunity);
-app.use('/spirit-rover', spirit);
-app.use('/mars-rovers', roversRoute)
-app.use('/register', signUp);
+ app.use('/curiosity-rover', curiosity);
+ app.use('/opportunity-rover', opportunity);
+ app.use('/spirit-rover', spirit);
+ app.use('/mars-rovers', roversRoute)
+ app.use('/register', signUp);
 
 
-app.use('/css', express.static('css'));
-app.use('/js', express.static('js'));
-app.use('/img', express.static('img'));
+ app.use('/css', express.static('css'));
+ app.use('/js', express.static('js'));
+ app.use('/img', express.static('img'));
 
-app.listen(1337);
+ app.listen(1337);
