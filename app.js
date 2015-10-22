@@ -13,19 +13,20 @@ var jsonParser = bodyParser.json();
 
 mongoose.connect('mongodb://localhost/db_martian')
 
-mongoose.model('users', {name: String});
+mongoose.model('newusers', {name: String});
 
 app.get('/users', function(req, res) {
-  mongoose.model('users').find(function(err, users) {
-    res.send(users)
+  mongoose.model('newusers').find(function(err, newusers) {
+    res.send(newusers)
   });
 });
 
 //Schema
 var userSchema = mongoose.Schema ({
-  firstname:  String,
+  id: Number,
+  firstname: String,
   lastname: String,
-  password:   String
+  password: String
 });
 
 var newUser = mongoose.model('newUser', userSchema);
@@ -34,7 +35,7 @@ var newUser = mongoose.model('newUser', userSchema);
  app.post('/sign-up', jsonParser, function (request, response) {
    var user = new newUser(request.body);
    user.save()
-   console.log(user);
+   response.send('thank you')
 });
 
 
