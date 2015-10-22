@@ -22,8 +22,7 @@ app.get('/users', function(req, res) {
 });
 
 //Schema
-var Schema = mongoose.Schema
-var userSchema = new Schema({
+var userSchema = mongoose.Schema ({
   firstname:  String,
   lastname: String,
   password:   String
@@ -33,14 +32,11 @@ var newUser = mongoose.model('newUser', userSchema);
 
  // POST jsonParser to console 
  app.post('/sign-up', jsonParser, function (request, response) {
-   var parseData = JSON.stringify(request.body);
-   var user = new newUser({parseData});
-   console.log(parseData);
-
-
-  // console.log(JSON.stringify(request.body));
-  // response.send('received!');
+   var user = new newUser(request.body);
+   user.save()
+   console.log(user);
 });
+
 
 
  app.use('/curiosity-rover', curiosity);
