@@ -8,11 +8,41 @@ var signUp = require ('./server-routes/sign-up.js')
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
+var cookieParser = require('cookie-parser')
 
-//mongodb
+app.use('/curiosity-rover', curiosity);
+app.use('/opportunity-rover', opportunity);
+app.use('/spirit-rover', spirit);
+app.use('/mars-rovers', roversRoute)
+app.use('/register', signUp);
+app.use(cookieParser());
 
+app.use('/css', express.static('css'));
+app.use('/js', express.static('js'));
+app.use('/img', express.static('img'));
+
+//cookie Parser
+
+app.use(function (request, response, next) {
+  var cookieParser = request.cookies.cookieName;
+  if (cookieParser === undefined) {
+    console.log('creating cookie');
+    var cookieNumber = Math.floor(Math.random()*90000) + 10000;
+    response.cookieParser('cookieName', cookieNumber, { maxAge: 90000000, httpOnly: true});
+
+    var cookieParser = new userCookie({id: cookieNumber});
+    cookieParser.save(function (err) {
+    });  
+  }
+  else{console.log('cookie already set');}
+  next();
+});
+
+
+//Mongodb
+
+//view all users
 mongoose.connect('mongodb://localhost/db_martian')
-
 mongoose.model('newusers', {name: String});
 
 app.get('/users', function(req, res) {
@@ -31,24 +61,13 @@ var userSchema = mongoose.Schema ({
 
 var newUser = mongoose.model('newUser', userSchema);
 
- // POST jsonParser to console 
+ // POST jsonParser
  app.post('/sign-up', jsonParser, function (request, response) {
    var user = new newUser(request.body);
    user.save()
    response.send('thank you')
-});
+ });
 
 
-
- app.use('/curiosity-rover', curiosity);
- app.use('/opportunity-rover', opportunity);
- app.use('/spirit-rover', spirit);
- app.use('/mars-rovers', roversRoute)
- app.use('/register', signUp);
-
-
- app.use('/css', express.static('css'));
- app.use('/js', express.static('js'));
- app.use('/img', express.static('img'));
 
  app.listen(1337);

@@ -18,6 +18,7 @@
   "homepage": "https://github.com/kentonscode/martian-view#readme",
   "dependencies": {
     "body-parser": "^1.14.1",
+    "cookie-parser": "^1.4.0",
     "express": "^4.13.3",
     "gulp": "^3.9.0",
     "gulp-mocha": "^2.1.3",
