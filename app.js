@@ -10,18 +10,8 @@ var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
 var cookieParser = require('cookie-parser')
 
-app.use('/curiosity-rover', curiosity);
-app.use('/opportunity-rover', opportunity);
-app.use('/spirit-rover', spirit);
-app.use('/mars-rovers', roversRoute)
-app.use('/register', signUp);
-app.use(cookieParser());
-
-app.use('/css', express.static('css'));
-app.use('/js', express.static('js'));
-app.use('/img', express.static('img'));
-
 //cookie Parser
+app.use(cookieParser());
 var Cookie = mongoose.model('Cookie', {id: Number});
 
 app.use(function (request, response, next) {
@@ -36,9 +26,20 @@ app.use(function (request, response, next) {
     });  
   } else {
     console.log('cookie already set');
+    console.log(cookie);
   }
   next();
 });
+
+app.use('/curiosity-rover', curiosity);
+app.use('/opportunity-rover', opportunity);
+app.use('/spirit-rover', spirit);
+app.use('/mars-rovers', roversRoute)
+app.use('/register', signUp);
+
+app.use('/css', express.static('css'));
+app.use('/js', express.static('js'));
+app.use('/img', express.static('img'));
 
 //Mongodb
 
