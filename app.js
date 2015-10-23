@@ -22,6 +22,7 @@ app.use('/js', express.static('js'));
 app.use('/img', express.static('img'));
 
 //cookie Parser
+var Cookie = mongoose.model('Cookie', {id: Number});
 
 app.use(function (request, response, next) {
   var cookieParser = request.cookies.cookieName;
@@ -30,15 +31,15 @@ app.use(function (request, response, next) {
     var cookieNumber = Math.floor(Math.random()*90000) + 10000;
     response.cookieParser('cookieName', cookieNumber, { maxAge: 90000000, httpOnly: true});
 
-    var cookieParser = new userCookie({id: cookieNumber});
+    var cookieParser = new Cookie({id: cookieNumber});
     cookieParser.save(function (err) {
     });  
   }
-  else{console.log('cookie already set');}
-  console.log(cookieParser);
+  else {
+    console.log('cookie already set');
+  }
   next();
 });
-
 
 //Mongodb
 
@@ -60,19 +61,11 @@ var userSchema = mongoose.Schema ({
   password: String
 });
 
-var cookieSchema = mongoose.Schema ({
-  id: Number
-});
-
-
 var newUser = mongoose.model('newUser', userSchema);
-var cookie = mongoose.model('cookie', cookieSchema);
 
  // POST jsonParser
  app.post('/sign-up', jsonParser, function (request, response) {
    var user = new newUser(request.body);
-   var newCookie = new cookie(request.body);
-   newCookie.save()
    user.save()
    response.send('thank you')
  });
