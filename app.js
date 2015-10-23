@@ -25,14 +25,14 @@ app.use('/img', express.static('img'));
 var Cookie = mongoose.model('Cookie', {id: Number});
 
 app.use(function (request, response, next) {
-  var cookieParser = request.cookies.cookieName;
-  if (cookieParser === undefined) {
+  var cookie = request.cookies.cookieName;
+  if (cookie === undefined) {
     console.log('creating cookie');
     var cookieNumber = Math.floor(Math.random()*90000) + 10000;
-    response.cookieParser('cookieName', cookieNumber, { maxAge: 90000000, httpOnly: true});
+    response.cookie('cookieName', cookieNumber, { maxAge: 90000000, httpOnly: true});
 
-    var cookieParser = new Cookie({id: cookieNumber});
-    cookieParser.save(function (err) {
+    var cookie = new Cookie({id: cookieNumber});
+    cookie.save(function (err) {
     });  
   }
   else {
