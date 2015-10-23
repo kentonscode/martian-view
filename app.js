@@ -35,8 +35,10 @@ app.use(function (request, response, next) {
     });  
   }
   else{console.log('cookie already set');}
+  console.log(cookieParser);
   next();
 });
+
 
 //Mongodb
 
@@ -58,11 +60,19 @@ var userSchema = mongoose.Schema ({
   password: String
 });
 
+var cookieSchema = mongoose.Schema ({
+  id: Number
+});
+
+
 var newUser = mongoose.model('newUser', userSchema);
+var cookie = mongoose.model('cookie', cookieSchema);
 
  // POST jsonParser
  app.post('/sign-up', jsonParser, function (request, response) {
    var user = new newUser(request.body);
+   var newCookie = new cookie(request.body);
+   newCookie.save()
    user.save()
    response.send('thank you')
  });
