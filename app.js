@@ -34,8 +34,7 @@ app.use(function (request, response, next) {
     var cookie = new Cookie({id: cookieNumber});
     cookie.save(function (err) {
     });  
-  }
-  else {
+  } else {
     console.log('cookie already set');
   }
   next();
