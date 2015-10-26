@@ -45,6 +45,11 @@ h2 {
   background-color: white;
 }
 
+.overlay {
+  position:absolute;
+  top:300px;
+}
+
 .panel,
 .panel-footer,
 .panel-heading {
@@ -72,4 +77,22 @@ h2 {
 .search-title {
   text-align: center;
   background-color: black; 
+}
+
+#sign-up {
+  margin-right: 15px;
+}
+
+video#marsLanding { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover; 
 }

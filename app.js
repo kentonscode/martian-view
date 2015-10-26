@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var index = require ('./server-routes/index-route.js')
 var curiosity = require('./server-routes/curiosity-route.js');
 var opportunity = require('./server-routes/opportunity-route.js');
 var spirit = require('./server-routes/spirit-route.js');
@@ -37,6 +38,8 @@ app.use('/spirit-rover', spirit);
 app.use('/mars-rovers', roversRoute)
 app.use('/register', signUp);
 
+app.use('/', index);
+app.use('/video', express.static('video'));
 app.use('/css', express.static('css'));
 app.use('/js', express.static('js'));
 app.use('/img', express.static('img'));
