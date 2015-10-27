@@ -18,7 +18,6 @@ var Cookie = mongoose.model('Cookie', {id: Number});
 app.use(function (request, response, next) {
   var cookie = request.cookies.cookieName;
   if (cookie === undefined) {
-    console.log('creating cookie');
     var cookieNumber = Math.floor(Math.random()*90000) + 10000;
     response.cookie('cookieName', cookieNumber, { maxAge: 90000000, httpOnly: true});
 
