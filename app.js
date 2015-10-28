@@ -1,15 +1,15 @@
 var express = require('express');
 var app = express();
-var index = require ('./server-routes/index-route.js')
+var index = require ('./server-routes/index-route.js');
 var curiosity = require('./server-routes/curiosity-route.js');
 var opportunity = require('./server-routes/opportunity-route.js');
 var spirit = require('./server-routes/spirit-route.js');
-var roversRoute = require ('./server-routes/rovers-route.js')
-var signUp = require ('./server-routes/sign-up.js')
-var mongoose = require('mongoose');
+var roversRoute = require ('./server-routes/rovers-route.js');
+var signUp = require ('./server-routes/sign-up.js');
+var mongoose = require('mongoose');;
 var bodyParser = require('body-parser');
 var jsonParser = bodyParser.json();
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
 
 //cookie Parser
 app.use(cookieParser());
@@ -34,7 +34,7 @@ app.use(function (request, response, next) {
 app.use('/curiosity-rover', curiosity);
 app.use('/opportunity-rover', opportunity);
 app.use('/spirit-rover', spirit);
-app.use('/mars-rovers', roversRoute)
+app.use('/mars-rovers', roversRoute);
 app.use('/register', signUp);
 
 app.use('/', index);
@@ -46,12 +46,12 @@ app.use('/img', express.static('img'));
 //Mongodb
 
 //view all users
-mongoose.connect('mongodb://localhost/db_martian')
+mongoose.connect('mongodb://localhost/db_martian');
 mongoose.model('newusers', {name: String});
 
 app.get('/users', function(req, res) {
   mongoose.model('newusers').find(function(err, newusers) {
-    res.send(newusers)
+    res.send(newusers);
   });
 });
 
@@ -68,8 +68,8 @@ var newUser = mongoose.model('newUser', userSchema);
  // POST jsonParser
  app.post('/sign-up', jsonParser, function (request, response) {
    var user = new newUser(request.body);
-   user.save()
-   response.send('thank you')
+   user.save();
+   response.send('thank you');
  });
 
 
