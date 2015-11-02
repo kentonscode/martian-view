@@ -4,6 +4,10 @@
   background-color: black;
 }
 
+.form {
+  margin-top: 275px;
+}
+
 h2 {
   color: white;
   font-weight: bold;
@@ -85,8 +89,19 @@ h2 {
   background-color: black; 
 }
 
+.sign-in-background {
+  background-image: url('../img/mars-globe.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
+}
+
 #sign-up {
-  margin-right: 15px;
+  color: white;
+}
+
+#userSubmit {
+  color:blue;
 }
 
 video#marsLanding { 
