@@ -4,21 +4,26 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Sign Up</title>
-  <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/default.css">
 </head>
 <body>
-  <form id="sign-up" action="signup" method="post">
-    First name:<br>
-    <input type="text" name="firstName">
-    <br>
-    Last name:<br>
-    <input type="text" name="lastName">
-    <br>
-    Password:<br>
-    <input type="text" name="password">
-    <br><br>
-    <input id ="userSubmit" type="submit" value="Submit">
-  </form> 
+  <div class='container-fluid'>
+    <div class='form text-center'>
+      <form id="sign-up" action="signup" method="post">
+        First name:<br>
+        <input type="text" name="firstName">
+        <br>
+        Last name:<br>
+        <input type="text" name="lastName">
+        <br>
+        Password:<br>
+        <input type="text" name="password">
+        <br><br>
+        <input id ="userSubmit" type="submit" value="Submit">
+      </form>
+    </div>  
+  </div>   
   <script src="/js/sign-up.js"></script>
 </body>
 </html>
