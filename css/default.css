@@ -9,7 +9,34 @@
 }
 
 .form {
-  margin-top: 275px;
+  padding-top: 250px;
+}
+
+.form-box{
+  background: rgba(52, 73, 94, 0);
+  margin: 25px auto;
+  width: 590px;
+  height: 364px;
+  position: relative;
+  font-family: 'Roboto';
+  outline: #ecfdff solid thick;
+}
+
+form input[type=text],
+form input[type=password] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  background: #fff;
+  border: none;
+  color: #e74c3c;
+  outline: none;
+}
+
+.form-padding {
+  padding: 0 20px;
+  position: relative;
 }
 
 h2 {
@@ -106,7 +133,18 @@ h2 {
 }
 
 #userSubmit {
+  display: block;
   color:blue;
+  border: none;
+  background: #136899;
+  height: 55px;
+  width: 95px;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 16px;
+  font-size: 20px;
+  top: 6px;
+  position: relative;
 }
 
 video#marsLanding { 
