@@ -30,7 +30,7 @@ h2 {
   font-family: 'Droid Serif', serif;
   color: white;
   font-weight: bold;
-  margin-top: 350px;
+  margin-top: 10px;
   background: rgba(0, 0, 0, 0.25);
 }
 
@@ -58,7 +58,6 @@ h2 {
 }
 
 .overlay {
-  position:absolute;
   margin-top:300px;
 }
 
