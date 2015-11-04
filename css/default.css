@@ -4,6 +4,10 @@
   background-color: #0D0D0D;
 }
 
+.details {
+  padding: 0;
+}
+
 .form {
   margin-top: 275px;
 }
