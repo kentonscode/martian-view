@@ -19,7 +19,7 @@
   height: 364px;
   position: relative;
   font-family: 'Roboto';
-  outline: #ecfdff solid thick;
+  outline: whitesmoke solid thick;
 }
 
 form input[type=text],
@@ -129,12 +129,11 @@ h2 {
 }
 
 #sign-up h4{
-  color: white;
+  color: whitesmoke;
 }
 
 #userSubmit {
   display: block;
-  color:blue;
   border: none;
   background: #136899;
   height: 55px;
