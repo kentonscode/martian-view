@@ -83,7 +83,7 @@ function showImages() {
   imgTag.src = images[image];
   imgTag.setAttribute('width', '400px');
   imgTag.setAttribute('height', '400px');
-  imgTag.alt = 'curiosity rover image';
+  imgTag.alt = 'Opportunity rover image';
   imgTag.className = 'img-thumbnail';
   document.getElementById('opportunity-images').appendChild(imgTag);
   document.getElementById('opportunity-images').style.display = 'block';
@@ -131,7 +131,7 @@ function showImages() {
   imgTag.src = images[image];
   imgTag.setAttribute('width', '400px');
   imgTag.setAttribute('height', '400px');
-  imgTag.alt = 'curiosity rover image';
+  imgTag.alt = 'Spirit rover image';
   imgTag.className = 'img-thumbnail';
   document.getElementById('spirit-images').appendChild(imgTag);
   document.getElementById('spirit-images').style.display = 'block';
